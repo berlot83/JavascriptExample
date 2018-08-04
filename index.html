@@ -1,0 +1,51 @@
+<!--Author: Axel A. Berlot , Date: 26/07/2018, Position: Java Programmer  -->
+
+<!DOCTYPE html>
+<!--Este texto está comentado, significa que cuanto el navegador lee todo aquello que está aquí adentro lo saltea y no toma en cuenta, se utiliza para dejar registro de cosas que quiera expresar el programador o explicaciones sobre qué quizo hacer para que otros programadores que utilicen el código luego les sea más fácil la comprensión, por ejemplo su nombre apellido y fecha de codificado -->
+
+
+<html>
+	<!-- El tag head es el tag que se utiliza para las configuraciones como rutas donde se encuentran los archivos css o javascript (js), nada de lo que se ponga aqui debería verse en la pantalla -->
+	<head>
+		<meta charset="utf-8"> <!-- Acá en charset te recomiendo que siempre copies utf-8 que es la cantidad más grande de carácteres que incluyen acentos en español y muchos más -->
+		<link rel="stylesheet" type="text/css" href="css/styles.css"> <!-- definimos la ruta del archivo css que ledará estilos colores etc, hay que poner la ruta relativa, no exacta -->
+		<title>Primer Proyecto Web de Pool</title>
+	</head>
+
+	<!-- El tag body es el tag donde habitualmente se pone Todo el contenido visible de la web -->
+	<body>
+
+	<h1 id="titulo">Login</h1>
+		
+			<label name="usuario" ></label>
+				<input type="text" placeholder="Usuario" name="usuario" id="usuario" /><br>
+			<label name="password"></label>
+				<input type="password" placeholder="Password" name="usuario" id="password" /><br>
+				<button onclick="login()">Login</button>
+		
+	</body>
+
+	<!-- Creemos una especie de login Ficticio para divertirnos con javascript -->
+	<script type="text/javascript"> /* Este tag es para colocar código javascript únicamente*/
+
+	var usuario = document.getElementById("usuario"); /* Vamos a crear una variable que tome el valor de todo lo que pongas adentro del input "usuario" */
+	var password = document.getElementById("password"); /* Vamos a crear una variable que tome el valor de todo lo que pongas adentro del input "password" */
+
+	var titulo = document.getElementById("titulo");
+	/* Una vez que tomamos las variables de cada input  vamos a crear la función que se encargue de realizar la igualdad */
+
+	function login(){
+		/* Pongamos un condicional */
+		if(usuario.value == "Pool" && password.value == "123456"){
+			
+			titulo.style.color = "blue";
+			titulo.innerHTML = "Acceso concedido, Hola Pool !!!!";
+		}else{
+			alert("Acceso denegado");
+		}
+	}
+
+	</script>
+
+</html>
+
