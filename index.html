@@ -13,21 +13,57 @@
 	</head>
 
 	<!-- El tag body es el tag donde habitualmente se pone Todo el contenido visible de la web -->
-	<body>
+	<body style="background:url('src/img/lost-dog.jpg')">
 
 	<!-- Prueba de subida a GitHub -->
 
 	<h1 id="titulo">Login</h1>
 		
 			<label name="usuario" ></label>
-				<input type="text" placeholder="Usuario" name="usuario" id="usuario" /><br>
+				<input type="text" placeholder="Usuario" name="usuario" id="usuario" style="border-radius:5px; height:20px; box-shadow: 0px 0px 15px black;" /><br>
 			<label name="password"></label>
-				<input type="password" placeholder="Password" name="usuario" id="password" /><br>
+				<input type="password" placeholder="Password" name="usuario" id="password" style="border-radius:5px; height:20px;  box-shadow: 0px 0px 15px black;"/><br>
+				<select id="genero" onchange="otro()" style="border-radius:5px; height:20px;  box-shadow: 0px 0px 15px black; hover:background-color:blue;">
+					<option value="masculino" >Masculino</option>
+					<option "femenino" >Femenino</option>
+					<option id="otro" value="otro" >Otro</option>
+				</select><br>
+				<label name="detalleOtro" id="detalle" style="display: none;" >Detalle de otro</label>
+					<input type="text" name="detalleOtro" id="detalleOtro" style="display:none;"/>
 				<button onclick="login()">Login</button>
 
+				<button onclick="relocate()" >Contactos</button>
+
 				<!-- Esta es una prueba para Pool -->
+
+				<img src="src/img/app.png" id= "app" onclick="clickimg()">
+				<div id="divrta">
+				</div>
+
+
 		
 	</body>
+
+	<script type="text/javascript">
+
+	function relocate(){
+		window.location = "contact.html";
+	}
+
+	function clickimg(){
+	var divrta= document.getElementById("divrta");
+
+    var button = document.createElement("button");
+    //button.setAttribute("href "contact.html");
+    button.innerHTML ="def";
+    button.onclick = function(){window.location.href = "contact.html";}
+   // button.window.location.href ="contact.html";
+
+    divrta.appendChild(button);    
+	}
+
+
+	</script>
 
 	<!-- Creemos una especie de login Ficticio para divertirnos con javascript -->
 	<script type="text/javascript"> /* Este tag es para colocar código javascript únicamente*/
@@ -47,6 +83,23 @@
 		}else{
 			alert("Acceso denegado");
 		}
+	}
+
+	</script>
+
+	<script type="text/javascript">
+	function otro(){
+		var selectGenero = document.getElementById("genero");
+		var detalleOtro =  document.getElementById("detalleOtro");
+
+		if(selectGenero.value == "otro"){
+			detalleOtro.style.display = "block";
+			detalle.style.display="block";
+
+		}else{
+			alert("no anda");
+		}
+		
 	}
 
 	</script>
